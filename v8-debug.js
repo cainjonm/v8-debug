@@ -93,7 +93,7 @@ var overrides = {
     }
   },
   processDebugRequest: function WRAPPED_BY_NODE_INSPECTOR(request) {
-    return this.extendedProcessDebugJSONRequest_(request)
+    return (this.extendedProcessDebugJSONRequest_ && this.extendedProcessDebugJSONRequest_(request))
       || this.processDebugJSONRequest(request);
   }
 };
